@@ -222,6 +222,9 @@
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#register-user" class="toc-h2 toc-link" data-title="Register User">Register User</a>
+                  </li>
+                  <li>
                     <a href="#validate-user" class="toc-h2 toc-link" data-title="Validate User">Validate User</a>
                   </li>
                   <li>
@@ -244,6 +247,22 @@
               </ul>
           </li>
           <li>
+            <a href="#investors" class="toc-h1 toc-link" data-title="Investors">Investors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#register-investor" class="toc-h2 toc-link" data-title="Register Investor">Register Investor</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#recipients" class="toc-h1 toc-link" data-title="Recipients">Recipients</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#register-recipient" class="toc-h2 toc-link" data-title="Register Recipient">Register Recipient</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -255,7 +274,36 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='users'>Users</h1><h2 id='validate-user'>Validate User</h2><pre class="highlight shell tab-shell"><code>curl -X
+        <h1 id='users'>Users</h1><h2 id='register-user'>Register User</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/register?name=myName&amp;username=spy&amp;pwd=p&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>The password of the user</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h2 id='validate-user'>Validate User</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
   -H <span class="s2">"Origin: localhost"</span>
@@ -337,6 +385,64 @@
 <tr>
 <td>index</td>
 <td>The index of the project that we would like to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='investors'>Investors</h1><h2 id='register-investor'>Register Investor</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/register?name=myName&amp;username=spy1&amp;pwd=p&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>The password of the user</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h1 id='recipients'>Recipients</h1><h2 id='register-recipient'>Register Recipient</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/register?name=myName&amp;username=spy2&amp;pwd=p&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>The password of the user</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
