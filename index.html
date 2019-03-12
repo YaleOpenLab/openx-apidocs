@@ -233,6 +233,17 @@
               </ul>
           </li>
           <li>
+            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-projects" class="toc-h2 toc-link" data-title="Get All Projects">Get All Projects</a>
+                  </li>
+                  <li>
+                    <a href="#get-specific-project" class="toc-h2 toc-link" data-title="Get Specific Project">Get Specific Project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -300,6 +311,34 @@
   <span class="s2">"http://localhost:8080/user/balance/xlm?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
 </code></pre>
 <p>This endpoint retrieves the XLM balance associated with the particular user</p>
+<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/project/all"</span>
+</code></pre>
+<p>This endpoint retrieves the list of all opensolar projects associated with the platform</p>
+<h2 id='get-specific-project'>Get Specific Project</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/project/get?index=1"</span>
+</code></pre>
+<p>This endpoint retrieves a specific opensolar project</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>index</td>
+<td>The index of the project that we would like to retrieve</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>The OpenFinancing platform API uses the following error codes:</p>
 
