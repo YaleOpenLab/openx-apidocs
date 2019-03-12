@@ -154,3 +154,21 @@ curl -X
 | username  | The username of the user      |
 | pwd       | The password of the user      |
 | seedpwd   | The seed password of the user |
+
+
+## Register Recipient
+
+```shell
+curl -X
+  GET -H "Content-Type: application/x-www-form-urlencoded"
+  -H "Origin: localhost"
+  -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/register?name=myName&username=spy2&pwd=p&seedpwd=x"
+```
+
+| Parameter | Description                   |
+| --------- | ----------------------------- |
+| name      | The name of the user          |
+| username  | The username of the user      |
+| pwd       | The password of the user      |
+| seedpwd   | The seed password of the user |
