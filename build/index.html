@@ -300,6 +300,24 @@
                   <li>
                     <a href="#register-investor" class="toc-h2 toc-link" data-title="Register Investor">Register Investor</a>
                   </li>
+                  <li>
+                    <a href="#get-all-investors" class="toc-h2 toc-link" data-title="Get All Investors">Get All Investors</a>
+                  </li>
+                  <li>
+                    <a href="#invest-in-a-project" class="toc-h2 toc-link" data-title="Invest in a Project">Invest in a Project</a>
+                  </li>
+                  <li>
+                    <a href="#change-investor-reputation" class="toc-h2 toc-link" data-title="Change Investor Reputation">Change Investor Reputation</a>
+                  </li>
+                  <li>
+                    <a href="#vote-towards-a-project" class="toc-h2 toc-link" data-title="Vote towards a project">Vote towards a project</a>
+                  </li>
+                  <li>
+                    <a href="#create-local-asset" class="toc-h2 toc-link" data-title="Create local asset">Create local asset</a>
+                  </li>
+                  <li>
+                    <a href="#send-email-to-another-entity" class="toc-h2 toc-link" data-title="Send Email to another entity">Send Email to another entity</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -317,7 +335,7 @@
                     <a href="#get-name" class="toc-h2 toc-link" data-title="Get Name">Get Name</a>
                   </li>
                   <li>
-                    <a href="#get-all-investors" class="toc-h2 toc-link" data-title="Get All Investors">Get All Investors</a>
+                    <a href="#get-all-investors-2" class="toc-h2 toc-link" data-title="Get All Investors">Get All Investors</a>
                   </li>
                   <li>
                     <a href="#get-all-recipients" class="toc-h2 toc-link" data-title="Get All Recipients">Get All Recipients</a>
@@ -922,6 +940,142 @@
 <td>The seed password of the user</td>
 </tr>
 </tbody></table>
+<h2 id='get-all-investors'>Get All Investors</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/all"</span>
+</code></pre><h2 id='invest-in-a-project'>Invest in a Project</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/invest?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;seedpwd=x&amp;projIndex=1&amp;amount=100"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+<tr>
+<td>projIndex</td>
+<td>The project index to invest in</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>The amount to invest</td>
+</tr>
+</tbody></table>
+<h2 id='change-investor-reputation'>Change Investor Reputation</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/reputation?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;reputation=1"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>reputation</td>
+<td>The amount of reputation to increase or decrease</td>
+</tr>
+</tbody></table>
+<h2 id='vote-towards-a-project'>Vote towards a project</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/vote?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;votes=10&amp;projIndex=1"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>votes</td>
+<td>The amount of votes to assign towards the project</td>
+</tr>
+<tr>
+<td>projIndex</td>
+<td>The project to vote towards</td>
+</tr>
+</tbody></table>
+<h2 id='create-local-asset'>Create local asset</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/localasset?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;assetName=testasset"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>assetName</td>
+<td>The name of the asset that the investor wants to create</td>
+</tr>
+</tbody></table>
+<h2 id='send-email-to-another-entity'>Send Email to another entity</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/sendemail?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;message=hi&amp;to=varunramganesh@gmail.com"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The message that the investor wants to convey to the receiver</td>
+</tr>
+<tr>
+<td>to</td>
+<td>The email address of the receiver</td>
+</tr>
+</tbody></table>
 <h1 id='recipients'>Recipients</h1><h2 id='register-recipient'>Register Recipient</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
   -H <span class="s2">"Origin: localhost"</span>
@@ -968,7 +1122,7 @@
 <td>The user inex of the user</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-investors'>Get All Investors</h2><pre class="highlight shell tab-shell"><code>curl -X
+<h2 id='get-all-investors-2'>Get All Investors</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
   -H <span class="s2">"Origin: localhost"</span>
   -H <span class="s2">"Cache-Control: no-cache"</span>
