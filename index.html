@@ -371,6 +371,9 @@
                   <li>
                     <a href="#get-specific-project" class="toc-h2 toc-link" data-title="Get Specific Project">Get Specific Project</a>
                   </li>
+                  <li>
+                    <a href="#get-projects-at-a-particular-stage" class="toc-h2 toc-link" data-title="Get Projects at a particular stage">Get Projects at a particular stage</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -393,6 +396,68 @@
                   </li>
                   <li>
                     <a href="#get-top-reputed-recipients" class="toc-h2 toc-link" data-title="Get Top Reputed Recipients">Get Top Reputed Recipients</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stablecoin" class="toc-h1 toc-link" data-title="Stablecoin">Stablecoin</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-stablecoin" class="toc-h2 toc-link" data-title="Get Stablecoin">Get Stablecoin</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stages" class="toc-h1 toc-link" data-title="Stages">Stages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-stages" class="toc-h2 toc-link" data-title="Get All Stages">Get All Stages</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-stage" class="toc-h2 toc-link" data-title="Get a specific stage">Get a specific stage</a>
+                  </li>
+                  <li>
+                    <a href="#promote-stages" class="toc-h2 toc-link" data-title="Promote stages">Promote stages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#particle" class="toc-h1 toc-link" data-title="Particle">Particle</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-devices" class="toc-h2 toc-link" data-title="Get All Devices">Get All Devices</a>
+                  </li>
+                  <li>
+                    <a href="#get-product-info" class="toc-h2 toc-link" data-title="Get Product Info">Get Product Info</a>
+                  </li>
+                  <li>
+                    <a href="#ping-device" class="toc-h2 toc-link" data-title="Ping Device">Ping Device</a>
+                  </li>
+                  <li>
+                    <a href="#turn-signal-on" class="toc-h2 toc-link" data-title="Turn Signal on">Turn Signal on</a>
+                  </li>
+                  <li>
+                    <a href="#get-device-id" class="toc-h2 toc-link" data-title="Get Device Id">Get Device Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-last-diagnostic-report" class="toc-h2 toc-link" data-title="Get last diagnostic report">Get last diagnostic report</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-diagnostic-reports" class="toc-h2 toc-link" data-title="Get all diagnostic reports">Get all diagnostic reports</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-info" class="toc-h2 toc-link" data-title="Get user info">Get user info</a>
+                  </li>
+                  <li>
+                    <a href="#get-installed-sim-card-data" class="toc-h2 toc-link" data-title="Get installed sim card data">Get installed sim card data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#platform" class="toc-h1 toc-link" data-title="Platform">Platform</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ping-the-platform" class="toc-h2 toc-link" data-title="Ping the platform">Ping the platform</a>
                   </li>
               </ul>
           </li>
@@ -1444,7 +1509,7 @@
 </tbody></table>
 <h2 id='store-state-hash'>Store State Hash</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET -H <span class="s2">"Cache-Control: no-cache"</span>
-  <span class="s2">"http://localhost:8080/recipient/ssh?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;hash=blawh"</span>
+  <span class="s2">"http://localhost:8080/recipient/ssh?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;hash=blah"</span>
 </code></pre>
 <table><thead>
 <tr>
@@ -1493,6 +1558,19 @@
 <td>The index of the project that we would like to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-projects-at-a-particular-stage'>Get Projects at a particular stage</h2><pre class="highlight shell tab-shell"><code>curl -X GET -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s2">"http://localhost:8080/projects?index=2"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>index</td>
+<td>The stage at which we would like to see how many projects exist</td>
+</tr>
+</tbody></table>
 <h1 id='public'>Public</h1><h2 id='get-name'>Get Name</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
   -H <span class="s2">"Origin: localhost"</span>
@@ -1535,6 +1613,267 @@
   -H <span class="s2">"Origin: localhost"</span>
   -H <span class="s2">"Cache-Control: no-cache"</span>
   <span class="s2">"http://localhost:8080/public/recipient/reputation/top"</span>
+</code></pre><h1 id='stablecoin'>Stablecoin</h1><h2 id='get-stablecoin'>Get Stablecoin</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/stablecoin/get?seed=SA5DXUTRWHQXOHPISTRLPH55NIUOSV2GB5NDTOSZ7H33KOK2TYYU556O&amp;amount=1&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;username=john"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seed</td>
+<td>The seed of the account that requires stablecoin / is willing to exchange xlm for stableusd</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>The amount of xlm that the user wishes to exchange for STABLEUSD</td>
+</tr>
+</tbody></table>
+<h1 id='stages'>Stages</h1><h2 id='get-all-stages'>Get All Stages</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s2">"http://localhost:8080/stages/all"</span>
+</code></pre><h2 id='get-a-specific-stage'>Get a specific stage</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s2">"http://localhost:8080/stages?index=1"</span>
+</code></pre><h2 id='promote-stages'>Promote stages</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s2">"http://localhost:8080/stages/promote?index=2"</span>
+</code></pre><h1 id='particle'>Particle</h1><h2 id='get-all-devices'>Get All Devices</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+<span class="s2">"http://localhost:8080/particle/devices?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;productInfo=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+<tr>
+<td>productInfo</td>
+<td>The information associated with the product</td>
+</tr>
+</tbody></table>
+<h2 id='get-product-info'>Get Product Info</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/productinfo?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;productInfo=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+<tr>
+<td>productInfo</td>
+<td>The information associated with the product</td>
+</tr>
+</tbody></table>
+<h2 id='ping-device'>Ping Device</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/deviceping?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;deviceId=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+</tbody></table>
+<h2 id='turn-signal-on'>Turn Signal on</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/devicesignal?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;deviceId=blah&amp;signal=on"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>Boolean value to turn on / off the signal</td>
+</tr>
+</tbody></table>
+<h2 id='get-device-id'>Get Device Id</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/getdeviceid?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;serialNumber=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>serialNumber</td>
+<td>The serial number of the device</td>
+</tr>
+</tbody></table>
+<h2 id='get-last-diagnostic-report'>Get last diagnostic report</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/diag/last?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;deviceId=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>The deviceId of the installed device</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-diagnostic-reports'>Get all diagnostic reports</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/diag/all?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah&amp;deviceId=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>The deviceId of the installed device</td>
+</tr>
+</tbody></table>
+<h2 id='get-user-info'>Get user info</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/user/info?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+</tbody></table>
+<h2 id='get-installed-sim-card-data'>Get installed sim card data</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/particle/sims?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;accessToken=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>accessToken</td>
+<td>The access token of the particle endpoint</td>
+</tr>
+</tbody></table>
+<h1 id='platform'>Platform</h1><h2 id='ping-the-platform'>Ping the platform</h2><pre class="highlight shell tab-shell"><code>curl -X GET -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s2">"http://localhost:8080/ping"</span>
 </code></pre><h1 id='errors'>Errors</h1>
 <p>The OpenFinancing platform API uses the following error codes:</p>
 
