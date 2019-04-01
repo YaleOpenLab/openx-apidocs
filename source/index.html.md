@@ -211,7 +211,7 @@ curl -X
 | username  | The username of the user                     |
 | pwhash    | The 512byte sha3 hash of the user's password |
 
-## Increase Trust Limit
+## Increase Trust Limit (Investor)
 
 ```shell
 curl -X
@@ -348,38 +348,6 @@ curl -X
 | issuerPubkey | The issuer of the specific asset the user wants to sweep |
 | assetName    | The asset that the user wants to sweep                   |
 
-# Projects
-
-## Get All Projects
-
-```shell
-curl -X
-  GET
-  -H "Content-Type: application/x-www-form-urlencoded"
-  -H "Origin: localhost"
-  -H "Cache-Control: no-cache"
-  "http://localhost:8080/project/all"
-```
-
-This endpoint retrieves the list of all opensolar projects associated with the platform
-
-## Get Specific Project
-
-```shell
-curl -X
-  GET
-  -H "Content-Type: application/x-www-form-urlencoded"
-  -H "Origin: localhost"
-  -H "Cache-Control: no-cache"
-  "http://localhost:8080/project/get?index=1"
-```
-
-This endpoint retrieves a specific opensolar project
-
-| Parameter | Description                                             |
-| --------- | ------------------------------------------------------- |
-| index     | The index of the project that we would like to retrieve |
-
 # Investors
 
 ## Register Investor
@@ -398,6 +366,19 @@ curl -X
 | username  | The username of the user      |
 | pwd       | The password of the user      |
 | seedpwd   | The seed password of the user |
+
+## Validate Investor
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/validate?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
 
 ## Get All Investors
 
@@ -501,6 +482,236 @@ curl -X
 | username  | The username of the user      |
 | pwd       | The password of the user      |
 | seedpwd   | The seed password of the user |
+
+## Validate Recipient
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/validate?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+
+## Payback
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/payback?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&assetName=OXA21932324a&seedpwd=x&amount=120&projIndex=1"
+```
+
+| Parameter | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| username  | The username of the user                                             |
+| pwhash    | The 512byte sha3 hash of the user's password                         |
+| assetName | The debt asset name owed by the recipient                            |
+| seedpwd   | The seed password of the user                                        |
+| amount    | The amount in stableUS that the user wants to payback                |
+| projIndex | The index of the project that the recipient wants to payback towards |
+
+## Store Device Id
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/deviceId?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&deviceid=blah"
+```
+
+| Parameter | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| username  | The username of the user                                       |
+| pwhash    | The 512byte sha3 hash of the user's password                   |
+| deviceId  | The deviceId (of the teller) that the recipient wants to store |
+
+## Store Start time of teller
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/startdevice?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&start=blah"
+```
+
+| Parameter | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
+| username  | The username of the user                                         |
+| pwhash    | The 512byte sha3 hash of the user's password                     |
+| start     | The start time (of the teller) that the recipient wants to store |
+
+## Store location of the teller
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/storelocation?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&location=blah"
+```
+
+| Parameter | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| username  | The username of the user                                       |
+| pwhash    | The 512byte sha3 hash of the user's password                   |
+| location  | The location (of the teller) that the recipient wants to store |
+
+## Change Recipient Reputation
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/reputation?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&reputation=10"
+```
+
+| Parameter  | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| username   | The username of the user                                    |
+| pwhash     | The 512byte sha3 hash of the user's password                |
+| reputation | The reputation that needs to be increased for the recipient |
+
+## Choose blind auction
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/auction/choose/blind?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+
+## Choose vickrey auction
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/auction/choose/vickrey?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+
+## Choose time auction
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/auction/choose/time?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+
+## Unlock Project
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/unlock/opensolar/time?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&seedpwd=x"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+| seedpwd   | The seed password of the user                |
+
+## Add email address
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/addemail?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&email=varunramganesh@gmail.com"
+```
+
+| Parameter | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| username  | The username of the user                                       |
+| pwhash    | The 512byte sha3 hash of the user's password                   |
+| email     | The email address that hte user wishes to add to their profile |
+
+## Finalize a particular project
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/finalize?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&projIndex=1"
+```
+
+| Parameter | Description                                       |
+| --------- | ------------------------------------------------- |
+| username  | The username of the user                          |
+| pwhash    | The 512byte sha3 hash of the user's password      |
+| projIndex | The index of the project that has to be finalized |
+
+## Increase Trust Limit (Recipient)
+
+```shell
+curl -X
+  GET -H "Content-Type: application/x-www-form-urlencoded"
+  -H "Origin: localhost"
+  -H "Cache-Control: no-cache"
+  "http://localhost:8080/user/increasetrustlimit?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&trust=10&seedpwd=x"
+```
+
+| Parameter | Description                                      |
+| --------- | ------------------------------------------------ |
+| username  | The username of the user                         |
+| pwhash    | The 512byte sha3 hash of the user's password     |
+| seedpwd   | The seedpwd of the source account                |
+| trust     | The amount that the trust has to be increased by |
+
+## Store State Hash
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/recipient/ssh?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&hash=blawh"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+| hash      | The state hash that the user wishes to store |
+
+# Projects
+
+## Get All Projects
+
+```shell
+curl -X
+  GET
+  -H "Content-Type: application/x-www-form-urlencoded"
+  -H "Origin: localhost"
+  -H "Cache-Control: no-cache"
+  "http://localhost:8080/project/all"
+```
+
+This endpoint retrieves the list of all opensolar projects associated with the platform
+
+## Get Specific Project
+
+```shell
+curl -X
+  GET
+  -H "Content-Type: application/x-www-form-urlencoded"
+  -H "Origin: localhost"
+  -H "Cache-Control: no-cache"
+  "http://localhost:8080/project/get?index=1"
+```
+
+This endpoint retrieves a specific opensolar project
+
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| index     | The index of the project that we would like to retrieve |
 
 # Public
 
