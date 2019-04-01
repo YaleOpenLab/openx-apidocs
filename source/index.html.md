@@ -399,6 +399,90 @@ curl -X
 | pwd       | The password of the user      |
 | seedpwd   | The seed password of the user |
 
+## Get All Investors
+
+```shell
+curl -X
+  GET -H "Content-Type: application/x-www-form-urlencoded"
+  -H "Origin: localhost"
+  -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/all"
+```
+
+## Invest in a Project
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/invest?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&seedpwd=x&projIndex=1&amount=100"
+```
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+| seedpwd   | The seed password of the user                |
+| projIndex | The project index to invest in               |
+| amount    | The amount to invest                         |
+
+## Change Investor Reputation
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/reputation?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&reputation=1"
+```
+
+| Parameter  | Description                                      |
+| ---------- | ------------------------------------------------ |
+| username   | The username of the user                         |
+| pwhash     | The 512byte sha3 hash of the user's password     |
+| reputation | The amount of reputation to increase or decrease |
+
+## Vote towards a project
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/vote?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&votes=10&projIndex=1"
+```
+
+| Parameter | Description                                       |
+| --------- | ------------------------------------------------- |
+| username  | The username of the user                          |
+| pwhash    | The 512byte sha3 hash of the user's password      |
+| votes     | The amount of votes to assign towards the project |
+| projIndex | The project to vote towards                       |
+
+## Create local asset
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/localasset?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&assetName=testasset"
+```
+
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| username  | The username of the user                                |
+| pwhash    | The 512byte sha3 hash of the user's password            |
+| assetName | The name of the asset that the investor wants to create |
+
+## Send Email to another entity
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/investor/sendemail?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&message=hi&to=varunramganesh@gmail.com"
+```
+
+| Parameter | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| username  | The username of the user                                      |
+| pwhash    | The 512byte sha3 hash of the user's password                  |
+| message   | The message that the investor wants to convey to the receiver |
+| to        | The email address of the receiver                             |
+
 # Recipients
 
 ## Register Recipient
