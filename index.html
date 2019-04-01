@@ -233,6 +233,54 @@
                   <li>
                     <a href="#get-xlm-balance" class="toc-h2 toc-link" data-title="Get XLM Balance">Get XLM Balance</a>
                   </li>
+                  <li>
+                    <a href="#get-asset-balance" class="toc-h2 toc-link" data-title="Get Asset Balance">Get Asset Balance</a>
+                  </li>
+                  <li>
+                    <a href="#get-ipfs-hash" class="toc-h2 toc-link" data-title="Get ipfs hash">Get ipfs hash</a>
+                  </li>
+                  <li>
+                    <a href="#send-xlm-to-another-user" class="toc-h2 toc-link" data-title="Send XLM to another user">Send XLM to another user</a>
+                  </li>
+                  <li>
+                    <a href="#view-all-users-with-kyc" class="toc-h2 toc-link" data-title="View all users with kyc">View all users with kyc</a>
+                  </li>
+                  <li>
+                    <a href="#view-all-users-without-kyc" class="toc-h2 toc-link" data-title="View all users without kyc">View all users without kyc</a>
+                  </li>
+                  <li>
+                    <a href="#get-xlm-from-testnet-faucet" class="toc-h2 toc-link" data-title="Get XLM from testnet faucet">Get XLM from testnet faucet</a>
+                  </li>
+                  <li>
+                    <a href="#trust-asset" class="toc-h2 toc-link" data-title="Trust Asset">Trust Asset</a>
+                  </li>
+                  <li>
+                    <a href="#get-platform-email" class="toc-h2 toc-link" data-title="Get platform email">Get platform email</a>
+                  </li>
+                  <li>
+                    <a href="#increase-trust-limit" class="toc-h2 toc-link" data-title="Increase Trust Limit">Increase Trust Limit</a>
+                  </li>
+                  <li>
+                    <a href="#send-recovery-secrets" class="toc-h2 toc-link" data-title="Send Recovery Secrets">Send Recovery Secrets</a>
+                  </li>
+                  <li>
+                    <a href="#recover-seed-from-secrets" class="toc-h2 toc-link" data-title="Recover Seed from secrets">Recover Seed from secrets</a>
+                  </li>
+                  <li>
+                    <a href="#generate-new-secrets" class="toc-h2 toc-link" data-title="Generate New Secrets">Generate New Secrets</a>
+                  </li>
+                  <li>
+                    <a href="#reset-password" class="toc-h2 toc-link" data-title="Reset Password">Reset Password</a>
+                  </li>
+                  <li>
+                    <a href="#set-new-password" class="toc-h2 toc-link" data-title="Set New Password">Set New Password</a>
+                  </li>
+                  <li>
+                    <a href="#sweep-xlm" class="toc-h2 toc-link" data-title="Sweep XLM">Sweep XLM</a>
+                  </li>
+                  <li>
+                    <a href="#sweep-asset" class="toc-h2 toc-link" data-title="Sweep Asset">Sweep Asset</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -263,11 +311,33 @@
               </ul>
           </li>
           <li>
+            <a href="#public" class="toc-h1 toc-link" data-title="Public">Public</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-name" class="toc-h2 toc-link" data-title="Get Name">Get Name</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-investors" class="toc-h2 toc-link" data-title="Get All Investors">Get All Investors</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-recipients" class="toc-h2 toc-link" data-title="Get All Recipients">Get All Recipients</a>
+                  </li>
+                  <li>
+                    <a href="#get-top-reputed-users" class="toc-h2 toc-link" data-title="Get Top Reputed Users">Get Top Reputed Users</a>
+                  </li>
+                  <li>
+                    <a href="#get-top-reputed-investors" class="toc-h2 toc-link" data-title="Get Top Reputed Investors">Get Top Reputed Investors</a>
+                  </li>
+                  <li>
+                    <a href="#get-top-reputed-recipients" class="toc-h2 toc-link" data-title="Get Top Reputed Recipients">Get Top Reputed Recipients</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -359,6 +429,442 @@
   <span class="s2">"http://localhost:8080/user/balance/xlm?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
 </code></pre>
 <p>This endpoint retrieves the XLM balance associated with the particular user</p>
+<h2 id='get-asset-balance'>Get Asset Balance</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/balance/asset?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;asset=STABLEUSD"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>The name of the asset whose balance one wants to query</td>
+</tr>
+</tbody></table>
+<h2 id='get-ipfs-hash'>Get ipfs hash</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/ipfs/hash?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;string=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>string</td>
+<td>The string whose ipfs hash one wants to get</td>
+</tr>
+</tbody></table>
+<h2 id='send-xlm-to-another-user'>Send XLM to another user</h2><pre class="highlight shell tab-shell"><code>  curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/sendxlm?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;seedpwd=x&amp;amount=1&amp;destination=GCHKX52XNXJ4PWG4TJYR7SEHFBBVDJWRGA22ELSISYLMRCDRSBLSL3MH"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seedpwd of the source account</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>The destination that the caller wishes to send funds to</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>The amount the caller wishes to send</td>
+</tr>
+</tbody></table>
+<h2 id='view-all-users-with-kyc'>View all users with kyc</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/notkycview?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='view-all-users-without-kyc'>View all users without kyc</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/kycview?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='get-xlm-from-testnet-faucet'>Get XLM from testnet faucet</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/askxlm?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='trust-asset'>Trust Asset</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/trustasset?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;assetCode=STABELUSD&amp;assetIssuer=GCSMRNO2NBLVULZAIAHA7PAPMFXXLFMLMEAZ23XPNGWMNSY2RL6GJYZR&amp;limit=100&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seedpwd of the source account</td>
+</tr>
+<tr>
+<td>assetCode</td>
+<td>The Code of the asset</td>
+</tr>
+<tr>
+<td>assetIssuer</td>
+<td>The issuer of the asset the caller wants to trust</td>
+</tr>
+</tbody></table>
+<h2 id='get-platform-email'>Get platform email</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/platformemail?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='increase-trust-limit'>Increase Trust Limit</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/increasetrustlimit?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;trust=10&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seedpwd of the source account</td>
+</tr>
+<tr>
+<td>trust</td>
+<td>The amount that the trust has to be increased by</td>
+</tr>
+</tbody></table>
+<h2 id='send-recovery-secrets'>Send Recovery Secrets</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/sendrecovery?username=samuel&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;email1=varunramganesh@gmail.com&amp;email2=varunramganesh@gmail.com&amp;email3=varunramganesh@gmail.com"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>email1</td>
+<td>The email of the first trusted entity</td>
+</tr>
+<tr>
+<td>email2</td>
+<td>The email of the second trusted entity</td>
+</tr>
+<tr>
+<td>email3</td>
+<td>The email of the third trusted entity</td>
+</tr>
+</tbody></table>
+<h2 id='recover-seed-from-secrets'>Recover Seed from secrets</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/seedrecovery?username=samuel&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;secret1=Z0Y8ojGOFs1hw_yNjpbI2jARd1VXjxe9Z1ZjWVN5Li0&amp;secret2=gVRQbkIv4bA6MyazZMpx8MzaijiaQuqPwX-yMU8Ztzw"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>secret1</td>
+<td>The secret from any one of the three trusted entities</td>
+</tr>
+<tr>
+<td>secret2</td>
+<td>The secret from any one of the three trusted entities</td>
+</tr>
+</tbody></table>
+<h2 id='generate-new-secrets'>Generate New Secrets</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/newsecrets?username=samuel&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;email1=varunramganesh@gmail.com&amp;email2=varunramganesh@gmail.com&amp;email3=varunramganesh@gmail.com&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>email1</td>
+<td>The email of the first trusted entity</td>
+</tr>
+<tr>
+<td>email2</td>
+<td>The email of the second trusted entity</td>
+</tr>
+<tr>
+<td>email3</td>
+<td>The email of the third trusted entity</td>
+</tr>
+</tbody></table>
+<h2 id='reset-password'>Reset Password</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/resetpwd?email=varunramganesh@gmail.com&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>The email id of the user</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h2 id='set-new-password'>Set New Password</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/pwdreset?verificationCode=YYfyyffCmWxHjoEt&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;email=varunramganesh@gmail.com&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>The email id of the user</td>
+</tr>
+<tr>
+<td>verificationCode</td>
+<td>The verification code sent to the user&#39;s email</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h2 id='sweep-xlm'>Sweep XLM</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/sweep?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;seedpwd=x&amp;destination=GC6NOHUN7FWCBPOLG7KNYUO6VKNJGCO5PQ5ZENG4L6FXIUTJ6VQ3C7NZ"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>The  destination that the user wants to sweep funds to</td>
+</tr>
+</tbody></table>
+<h2 id='sweep-asset'>Sweep Asset</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/sweepasset?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;seedpwd=x&amp;destination=GC6NOHUN7FWCBPOLG7KNYUO6VKNJGCO5PQ5ZENG4L6FXIUTJ6VQ3C7NZ&amp;assetName=STABLEUSD&amp;issuerPubkey=GCSMRNO2NBLVULZAIAHA7PAPMFXXLFMLMEAZ23XPNGWMNSY2RL6GJYZR"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>The  destination that the user wants to sweep funds to</td>
+</tr>
+<tr>
+<td>issuerPubkey</td>
+<td>The issuer of the specific asset the user wants to sweep</td>
+</tr>
+<tr>
+<td>assetName</td>
+<td>The asset that the user wants to sweep</td>
+</tr>
+</tbody></table>
 <h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
@@ -445,7 +951,49 @@
 <td>The seed password of the user</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+<h1 id='public'>Public</h1><h2 id='get-name'>Get Name</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/public/user?index=50"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>index</td>
+<td>The user inex of the user</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-investors'>Get All Investors</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/public/investor/all"</span>
+</code></pre><h2 id='get-all-recipients'>Get All Recipients</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/public/recipient/all"</span>
+</code></pre><h2 id='get-top-reputed-users'>Get Top Reputed Users</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/public/reputation/top"</span>
+</code></pre><h2 id='get-top-reputed-investors'>Get Top Reputed Investors</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/public/investor/reputation/top"</span>
+</code></pre><h2 id='get-top-reputed-recipients'>Get Top Reputed Recipients</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/public/recipient/reputation/top"</span>
+</code></pre><h1 id='errors'>Errors</h1>
 <p>The OpenFinancing platform API uses the following error codes:</p>
 
 <table><thead>
