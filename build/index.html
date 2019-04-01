@@ -258,7 +258,7 @@
                     <a href="#get-platform-email" class="toc-h2 toc-link" data-title="Get platform email">Get platform email</a>
                   </li>
                   <li>
-                    <a href="#increase-trust-limit" class="toc-h2 toc-link" data-title="Increase Trust Limit">Increase Trust Limit</a>
+                    <a href="#increase-trust-limit-investor" class="toc-h2 toc-link" data-title="Increase Trust Limit (Investor)">Increase Trust Limit (Investor)</a>
                   </li>
                   <li>
                     <a href="#send-recovery-secrets" class="toc-h2 toc-link" data-title="Send Recovery Secrets">Send Recovery Secrets</a>
@@ -284,21 +284,13 @@
               </ul>
           </li>
           <li>
-            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-projects" class="toc-h2 toc-link" data-title="Get All Projects">Get All Projects</a>
-                  </li>
-                  <li>
-                    <a href="#get-specific-project" class="toc-h2 toc-link" data-title="Get Specific Project">Get Specific Project</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#investors" class="toc-h1 toc-link" data-title="Investors">Investors</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#register-investor" class="toc-h2 toc-link" data-title="Register Investor">Register Investor</a>
+                  </li>
+                  <li>
+                    <a href="#validate-investor" class="toc-h2 toc-link" data-title="Validate Investor">Validate Investor</a>
                   </li>
                   <li>
                     <a href="#get-all-investors" class="toc-h2 toc-link" data-title="Get All Investors">Get All Investors</a>
@@ -325,6 +317,59 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#register-recipient" class="toc-h2 toc-link" data-title="Register Recipient">Register Recipient</a>
+                  </li>
+                  <li>
+                    <a href="#validate-recipient" class="toc-h2 toc-link" data-title="Validate Recipient">Validate Recipient</a>
+                  </li>
+                  <li>
+                    <a href="#payback" class="toc-h2 toc-link" data-title="Payback">Payback</a>
+                  </li>
+                  <li>
+                    <a href="#store-device-id" class="toc-h2 toc-link" data-title="Store Device Id">Store Device Id</a>
+                  </li>
+                  <li>
+                    <a href="#store-start-time-of-teller" class="toc-h2 toc-link" data-title="Store Start time of teller">Store Start time of teller</a>
+                  </li>
+                  <li>
+                    <a href="#store-location-of-the-teller" class="toc-h2 toc-link" data-title="Store location of the teller">Store location of the teller</a>
+                  </li>
+                  <li>
+                    <a href="#change-recipient-reputation" class="toc-h2 toc-link" data-title="Change Recipient Reputation">Change Recipient Reputation</a>
+                  </li>
+                  <li>
+                    <a href="#choose-blind-auction" class="toc-h2 toc-link" data-title="Choose blind auction">Choose blind auction</a>
+                  </li>
+                  <li>
+                    <a href="#choose-vickrey-auction" class="toc-h2 toc-link" data-title="Choose vickrey auction">Choose vickrey auction</a>
+                  </li>
+                  <li>
+                    <a href="#choose-time-auction" class="toc-h2 toc-link" data-title="Choose time auction">Choose time auction</a>
+                  </li>
+                  <li>
+                    <a href="#unlock-project" class="toc-h2 toc-link" data-title="Unlock Project">Unlock Project</a>
+                  </li>
+                  <li>
+                    <a href="#add-email-address" class="toc-h2 toc-link" data-title="Add email address">Add email address</a>
+                  </li>
+                  <li>
+                    <a href="#finalize-a-particular-project" class="toc-h2 toc-link" data-title="Finalize a particular project">Finalize a particular project</a>
+                  </li>
+                  <li>
+                    <a href="#increase-trust-limit-recipient" class="toc-h2 toc-link" data-title="Increase Trust Limit (Recipient)">Increase Trust Limit (Recipient)</a>
+                  </li>
+                  <li>
+                    <a href="#store-state-hash" class="toc-h2 toc-link" data-title="Store State Hash">Store State Hash</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-projects" class="toc-h2 toc-link" data-title="Get All Projects">Get All Projects</a>
+                  </li>
+                  <li>
+                    <a href="#get-specific-project" class="toc-h2 toc-link" data-title="Get Specific Project">Get Specific Project</a>
                   </li>
               </ul>
           </li>
@@ -647,7 +692,7 @@
 <td>The 512byte sha3 hash of the user&#39;s password</td>
 </tr>
 </tbody></table>
-<h2 id='increase-trust-limit'>Increase Trust Limit</h2><pre class="highlight shell tab-shell"><code>curl -X
+<h2 id='increase-trust-limit-investor'>Increase Trust Limit (Investor)</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
   -H <span class="s2">"Origin: localhost"</span>
   -H <span class="s2">"Cache-Control: no-cache"</span>
@@ -883,34 +928,6 @@
 <td>The asset that the user wants to sweep</td>
 </tr>
 </tbody></table>
-<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2><pre class="highlight shell tab-shell"><code>curl -X
-  GET
-  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
-  -H <span class="s2">"Origin: localhost"</span>
-  -H <span class="s2">"Cache-Control: no-cache"</span>
-  <span class="s2">"http://localhost:8080/project/all"</span>
-</code></pre>
-<p>This endpoint retrieves the list of all opensolar projects associated with the platform</p>
-<h2 id='get-specific-project'>Get Specific Project</h2><pre class="highlight shell tab-shell"><code>curl -X
-  GET
-  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
-  -H <span class="s2">"Origin: localhost"</span>
-  -H <span class="s2">"Cache-Control: no-cache"</span>
-  <span class="s2">"http://localhost:8080/project/get?index=1"</span>
-</code></pre>
-<p>This endpoint retrieves a specific opensolar project</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>index</td>
-<td>The index of the project that we would like to retrieve</td>
-</tr>
-</tbody></table>
 <h1 id='investors'>Investors</h1><h2 id='register-investor'>Register Investor</h2><pre class="highlight shell tab-shell"><code>curl -X
   GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
   -H <span class="s2">"Origin: localhost"</span>
@@ -938,6 +955,25 @@
 <tr>
 <td>seedpwd</td>
 <td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h2 id='validate-investor'>Validate Investor</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/investor/validate?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-investors'>Get All Investors</h2><pre class="highlight shell tab-shell"><code>curl -X
@@ -1103,6 +1139,358 @@
 <tr>
 <td>seedpwd</td>
 <td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h2 id='validate-recipient'>Validate Recipient</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/validate?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='payback'>Payback</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/payback?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;assetName=OXA21932324a&amp;seedpwd=x&amp;amount=120&amp;projIndex=1"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>assetName</td>
+<td>The debt asset name owed by the recipient</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>The amount in stableUS that the user wants to payback</td>
+</tr>
+<tr>
+<td>projIndex</td>
+<td>The index of the project that the recipient wants to payback towards</td>
+</tr>
+</tbody></table>
+<h2 id='store-device-id'>Store Device Id</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/deviceId?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;deviceid=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>The deviceId (of the teller) that the recipient wants to store</td>
+</tr>
+</tbody></table>
+<h2 id='store-start-time-of-teller'>Store Start time of teller</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/startdevice?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;start=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>start</td>
+<td>The start time (of the teller) that the recipient wants to store</td>
+</tr>
+</tbody></table>
+<h2 id='store-location-of-the-teller'>Store location of the teller</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/storelocation?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;location=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>location</td>
+<td>The location (of the teller) that the recipient wants to store</td>
+</tr>
+</tbody></table>
+<h2 id='change-recipient-reputation'>Change Recipient Reputation</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/reputation?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;reputation=10"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>reputation</td>
+<td>The reputation that needs to be increased for the recipient</td>
+</tr>
+</tbody></table>
+<h2 id='choose-blind-auction'>Choose blind auction</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/auction/choose/blind?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='choose-vickrey-auction'>Choose vickrey auction</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/auction/choose/vickrey?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='choose-time-auction'>Choose time auction</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/auction/choose/time?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+</tbody></table>
+<h2 id='unlock-project'>Unlock Project</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/unlock/opensolar/time?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seed password of the user</td>
+</tr>
+</tbody></table>
+<h2 id='add-email-address'>Add email address</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/addemail?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;email=varunramganesh@gmail.com"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address that hte user wishes to add to their profile</td>
+</tr>
+</tbody></table>
+<h2 id='finalize-a-particular-project'>Finalize a particular project</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/finalize?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;projIndex=1"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>projIndex</td>
+<td>The index of the project that has to be finalized</td>
+</tr>
+</tbody></table>
+<h2 id='increase-trust-limit-recipient'>Increase Trust Limit (Recipient)</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/increasetrustlimit?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;trust=10&amp;seedpwd=x"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>seedpwd</td>
+<td>The seedpwd of the source account</td>
+</tr>
+<tr>
+<td>trust</td>
+<td>The amount that the trust has to be increased by</td>
+</tr>
+</tbody></table>
+<h2 id='store-state-hash'>Store State Hash</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/recipient/ssh?username=martin&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;hash=blawh"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>The state hash that the user wishes to store</td>
+</tr>
+</tbody></table>
+<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/project/all"</span>
+</code></pre>
+<p>This endpoint retrieves the list of all opensolar projects associated with the platform</p>
+<h2 id='get-specific-project'>Get Specific Project</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+  -H <span class="s2">"Origin: localhost"</span>
+  -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/project/get?index=1"</span>
+</code></pre>
+<p>This endpoint retrieves a specific opensolar project</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>index</td>
+<td>The index of the project that we would like to retrieve</td>
 </tr>
 </tbody></table>
 <h1 id='public'>Public</h1><h2 id='get-name'>Get Name</h2><pre class="highlight shell tab-shell"><code>curl -X
