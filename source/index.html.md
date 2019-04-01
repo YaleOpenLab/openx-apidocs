@@ -672,7 +672,7 @@ curl -X
 ```shell
 curl -X
   GET -H "Cache-Control: no-cache"
-  "http://localhost:8080/recipient/ssh?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&hash=blawh"
+  "http://localhost:8080/recipient/ssh?username=martin&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&hash=blah"
 ```
 
 | Parameter | Description                                  |
@@ -712,6 +712,16 @@ This endpoint retrieves a specific opensolar project
 | Parameter | Description                                             |
 | --------- | ------------------------------------------------------- |
 | index     | The index of the project that we would like to retrieve |
+
+## Get Projects at a particular stage
+
+```shell
+curl -X GET -H "Cache-Control: no-cache" "http://localhost:8080/projects?index=2"
+```
+
+| Parameter | Description                                                     |
+| --------- | --------------------------------------------------------------- |
+| index     | The stage at which we would like to see how many projects exist |
 
 # Public
 
@@ -777,4 +787,185 @@ curl -X
   -H "Origin: localhost"
   -H "Cache-Control: no-cache"
   "http://localhost:8080/public/recipient/reputation/top"
+```
+
+# Stablecoin
+
+## Get Stablecoin
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/stablecoin/get?seed=SA5DXUTRWHQXOHPISTRLPH55NIUOSV2GB5NDTOSZ7H33KOK2TYYU556O&amount=1&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&username=john"
+```
+
+| Parameter | Description                                                                                 |
+| --------- | ------------------------------------------------------------------------------------------- |
+| username  | The username of the user                                                                    |
+| pwhash    | The 512byte sha3 hash of the user's password                                                |
+| seed      | The seed of the account that requires stablecoin / is willing to exchange xlm for stableusd |
+| amount    | The amount of xlm that the user wishes to exchange for STABLEUSD                            |
+
+# Stages
+
+## Get All Stages
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache" "http://localhost:8080/stages/all"
+```
+
+## Get a specific stage
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache" "http://localhost:8080/stages?index=1"
+```
+
+## Promote stages
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache" "http://localhost:8080/stages/promote?index=2"
+```
+
+# Particle
+
+## Get All Devices
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+"http://localhost:8080/particle/devices?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&productInfo=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+| productInfo | The information associated with the product  |
+
+## Get Product Info
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/productinfo?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&productInfo=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+| productInfo | The information associated with the product  |
+
+## Ping Device
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/deviceping?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&deviceId=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+
+## Turn Signal on
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/devicesignal?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&deviceId=blah&signal=on"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+| signal | Boolean value to turn on / off the signal|
+
+## Get Device Id
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/getdeviceid?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&serialNumber=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| serialNumber | The serial number of the device |
+
+## Get last diagnostic report
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/diag/last?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&deviceId=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+| deviceId | The deviceId of the installed device  |
+
+## Get all diagnostic reports
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/diag/all?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&deviceId=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+| deviceId | The deviceId of the installed device  |
+
+## Get user info
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/user/info?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+
+## Get installed sim card data
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/particle/sims?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah"
+```
+
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| username    | The username of the user                     |
+| pwhash      | The 512byte sha3 hash of the user's password |
+| accessToken | The access token of the particle endpoint    |
+
+# Platform
+
+## Ping the platform
+
+```shell
+curl -X GET -H "Cache-Control: no-cache" "http://localhost:8080/ping"
 ```
