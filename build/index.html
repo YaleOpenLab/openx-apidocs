@@ -281,6 +281,9 @@
                   <li>
                     <a href="#sweep-asset" class="toc-h2 toc-link" data-title="Sweep Asset">Sweep Asset</a>
                   </li>
+                  <li>
+                    <a href="#update-user" class="toc-h2 toc-link" data-title="Update User">Update User</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -991,6 +994,57 @@
 <tr>
 <td>assetName</td>
 <td>The asset that the user wants to sweep</td>
+</tr>
+</tbody></table>
+<h2 id='update-user'>Update User</h2><pre class="highlight shell tab-shell"><code>curl -X
+  GET -H <span class="s2">"Cache-Control: no-cache"</span>
+  <span class="s2">"http://localhost:8080/user/validate?username=john&amp;pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&amp;zipcode=blah"</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the user</td>
+</tr>
+<tr>
+<td>pwhash</td>
+<td>The 512byte sha3 hash of the user&#39;s password</td>
+</tr>
+<tr>
+<td>name (optional)</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>zipcode (optional)</td>
+<td>The zipcode that the user&#39;s residence is in</td>
+</tr>
+<tr>
+<td>country (optional)</td>
+<td>The country of residence of the user</td>
+</tr>
+<tr>
+<td>recoveryphone (optional)</td>
+<td>The recovery phone number of the user</td>
+</tr>
+<tr>
+<td>address (optional)</td>
+<td>The address of the user</td>
+</tr>
+<tr>
+<td>description (optional)</td>
+<td>The description of the user</td>
+</tr>
+<tr>
+<td>email (optional)</td>
+<td>The email that the user wants to receive notifications at</td>
+</tr>
+<tr>
+<td>notification (optional)</td>
+<td>The notification settings toggle of the user</td>
 </tr>
 </tbody></table>
 <h1 id='investors'>Investors</h1><h2 id='register-investor'>Register Investor</h2><pre class="highlight shell tab-shell"><code>curl -X

@@ -348,6 +348,27 @@ curl -X
 | issuerPubkey | The issuer of the specific asset the user wants to sweep |
 | assetName    | The asset that the user wants to sweep                   |
 
+## Update User
+
+```shell
+curl -X
+  GET -H "Cache-Control: no-cache"
+  "http://localhost:8080/user/validate?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&zipcode=blah"
+```
+
+| Parameter                | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| username                 | The username of the user                                  |
+| pwhash                   | The 512byte sha3 hash of the user's password              |
+| name (optional)          | The name of the user                                      |
+| zipcode (optional)       | The zipcode that the user's residence is in               |
+| country (optional)       | The country of residence of the user                      |
+| recoveryphone (optional) | The recovery phone number of the user                     |
+| address (optional)       | The address of the user                                   |
+| description (optional)   | The description of the user                               |
+| email (optional)         | The email that the user wants to receive notifications at |
+| notification (optional)  | The notification settings toggle of the user              |
+
 # Investors
 
 ## Register Investor
@@ -888,7 +909,7 @@ curl -X
 | username    | The username of the user                     |
 | pwhash      | The 512byte sha3 hash of the user's password |
 | accessToken | The access token of the particle endpoint    |
-| signal | Boolean value to turn on / off the signal|
+| signal      | Boolean value to turn on / off the signal    |
 
 ## Get Device Id
 
@@ -898,11 +919,11 @@ curl -X
   "http://localhost:8080/particle/getdeviceid?username=john&pwhash=9a768ace36ff3d1771d5c145a544de3d68343b2e76093cb7b2a8ea89ac7f1a20c852e6fc1d71275b43abffefac381c5b906f55c3bcff4225353d02f1d3498758&accessToken=blah&serialNumber=blah"
 ```
 
-| Parameter   | Description                                  |
-| ----------- | -------------------------------------------- |
-| username    | The username of the user                     |
-| pwhash      | The 512byte sha3 hash of the user's password |
-| serialNumber | The serial number of the device |
+| Parameter    | Description                                  |
+| ------------ | -------------------------------------------- |
+| username     | The username of the user                     |
+| pwhash       | The 512byte sha3 hash of the user's password |
+| serialNumber | The serial number of the device              |
 
 ## Get last diagnostic report
 
@@ -917,7 +938,7 @@ curl -X
 | username    | The username of the user                     |
 | pwhash      | The 512byte sha3 hash of the user's password |
 | accessToken | The access token of the particle endpoint    |
-| deviceId | The deviceId of the installed device  |
+| deviceId    | The deviceId of the installed device         |
 
 ## Get all diagnostic reports
 
@@ -932,7 +953,7 @@ curl -X
 | username    | The username of the user                     |
 | pwhash      | The 512byte sha3 hash of the user's password |
 | accessToken | The access token of the particle endpoint    |
-| deviceId | The deviceId of the installed device  |
+| deviceId    | The deviceId of the installed device         |
 
 ## Get user info
 
