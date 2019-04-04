@@ -850,7 +850,7 @@ curl -X
   GET -H "Cache-Control: no-cache" "http://localhost:8080/stages/promote?index=2"
 ```
 
-# Particle
+# IoT Device
 
 ## Get All Devices
 
