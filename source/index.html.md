@@ -817,6 +817,127 @@ curl -X GET  "http://localhost:8080/projects?index=2"
 | --------- | --------------------------------------------------------------- |
 | index     | The stage at which we would like to see how many projects exist |
 
+# Platform
+
+## Get Constants
+
+`GET /platform/getconsts` gets the constants from openx
+
+| Parameter | Description                             |
+| --------- | --------------------------------------- |
+| code      | The authentication code of the platform |
+
+## Platform Retrieve User
+
+`GET /platform/user/retrieve` retrieves a user from openx's database
+
+| Parameter | Description                                               |
+| --------- | --------------------------------------------------------- |
+| code      | The authentication code of the platform                   |
+| key       | The index of the user that the platform wants to retrieve |
+
+## Platform User Validate
+
+`GET /platform/user/validate` validates a user with openx's database
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| code      | The authentication code of the platform        |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+
+## Platform New User
+
+`GET /platform/user/new` creates a new user in openx's database
+
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| code      | The authentication code of the platform      |
+| username  | The username of the user                     |
+| pwhash    | The 512byte sha3 hash of the user's password |
+| seedpwd   | The seedpwd of the source account            |
+| realname  | The real name of the user                    |
+
+## Platform User Validate
+
+`GET /platform/user/collision` checks if a username collides with an existing username
+
+## Retrieve All PLatforms
+
+`GET /platforms/all` retrieves all platforms that are built on openx
+
+# Admin
+
+## Kill Platform
+
+`POST /admin/kill` kills the platform instantly
+
+| Parameter       | Description                                    |
+| --------------- | ---------------------------------------------- |
+| nuke (OPTIONAL) | The nuclear code of the platform               |
+| username        | The username of the user                       |
+| token           | The authentication token belonging to the user |
+
+## Freeze Platform
+
+`GET /admin/freeze` freezes the platform instantly
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+
+## Generate Nuclear Code
+
+`POST /admin/gennuke` generates a new nuclear code
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+
+## Generate Nuclear Code
+
+`GET /admin/platform/all` lists all platforms
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+
+## List all admins
+
+`GET /admin/list` lists all admins
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+
+## Generate Nuclear Code
+
+`POST /admin/platform/new` creates a new platform/code paid
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+| name      | The name of the new platform                   |
+| code      | The authentication code of the new platform    |
+| timeout   | The timeout associated with the new platform   |
+
+## Send Message
+
+`POST /admin/sendmessage` sends a message directly to the inbox of an openx user
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+| subject   | The subject of the message                     |
+| message   | The message                                    |
+| recipient | The recipient of the message                   |
+
 # Public
 
 ## Get Name
@@ -886,6 +1007,8 @@ curl -X
 # Stablecoin
 
 ## Get Stablecoin
+
+`GET /stablecoin/get` gets a specific amount of stablecoin exchanging XLM
 
 ```shell
 curl -X
