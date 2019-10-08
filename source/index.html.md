@@ -958,28 +958,37 @@ curl -X GET -H "Content-Type: application/x-www-form-urlencoded" -H "Origin: loc
 
 # Projects
 
+## Insert a new project
+
+`POSt /project/insert` inserts a new project into the opensolar platform
+
+| Parameter  | Description                                    |
+| ---------- | ---------------------------------------------- |
+| username   | The username of the user                       |
+| token      | The authentication token belonging to the user |
+| PanelSize  | The size of the panel                          |
+| TotalValue | The total value of the project                 |
+| Location   | the location fo the project                    |
+| Metadata   | Other metadata associated with the project     |
+| Stage      | The stage at which the project is at           |
+
 ## Get All Projects
 
-```shell
-curl -X
-  GET
-  -H "Content-Type: application/x-www-form-urlencoded"
-  -H "Origin: localhost"
+`GET /project/all` gets all projects advertised on the opensolar platform
 
-  "http://localhost:8080/project/all"
+```shell
+curl -X GET -H "Origin: localhost" "http://localhost:8080/project/all"
 ```
 
 This endpoint retrieves the list of all opensolar projects associated with the platform
 
 ## Get Specific Project
 
+`GET /project/get` gets a specific project advertised on the opensolar platform
+
 ```shell
 curl -X
-  GET
-  -H "Content-Type: application/x-www-form-urlencoded"
-  -H "Origin: localhost"
-
-  "http://localhost:8080/project/get?index=1"
+  GET -H "Origin: localhost" "http://localhost:8080/project/get?index=1"
 ```
 
 This endpoint retrieves a specific opensolar project
@@ -990,38 +999,75 @@ This endpoint retrieves a specific opensolar project
 
 ## Get Projects at a particular stage
 
+`GET /projects` gets projects at a specific stage advertised on the opensolar platform
+
 ```shell
-curl -X GET  "http://localhost:8080/projects?index=2"
+curl -X GET  "http://localhost:8080/projects?stage=2"
 ```
 
 | Parameter | Description                                                     |
 | --------- | --------------------------------------------------------------- |
-| index     | The stage at which we would like to see how many projects exist |
+| stage     | The stage at which we would like to see how many projects exist |
+
+## AddHash
+
+`GET /utils/addhash` adds a hash (contract / other documents) to be stored on the platform
+
+| Parameter | Description                                                            |
+| --------- | ---------------------------------------------------------------------- |
+| projIndex | The index of the project                                               |
+| choice    | The choice (omh/cch/ipch/rpch/ssh) that he user wants to store against |
+| choicestr | The ipfs hash of the related document                                  |
+
+## Teller Shutdown
+
+`GET /tellershutdown` is an endpoint called when the teller shuts down
+
+| Parameter | Description                                                |
+| --------- | ---------------------------------------------------------- |
+| projIndex | The index of the project                                   |
+| deviceId  | The deviceId associated with the teller                    |
+| tx1       | The first half of the state hash stored in the memo field  |
+| tx2       | The second half of the state hash stored in the memo field |
+
+## Teller Payback
+
+`GET /tellerpayback` is an endpoint called when the teller automatically pays back towards a contract
+
+| Parameter | Description                             |
+| --------- | --------------------------------------- |
+| projIndex | The index of the project                |
+| deviceId  | The deviceId associated with the teller |
 
 # Stages
 
 ## Get All Stages
 
+`GET /stages/all` gets all stages that are defined on the opensolar platform
+
 ```shell
-curl -X
-  GET  "http://localhost:8080/stages/all"
+curl -X GET "http://localhost:8080/stages/all"
 ```
 
 ## Get a specific stage
 
+`GET /stages` gets details on a stage defined on the opensolar platform
+
 ```shell
-curl -X
-  GET  "http://localhost:8080/stages?index=1"
+curl -X GET "http://localhost:8080/stages?index=1"
 ```
 
 ## Promote stages
 
-```shell
-curl -X
-  GET  "http://localhost:8080/stages/promote?index=2"
-```
+`GET /stages/promote` advances a project's stage by 1
 
-# IoT Device
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| username  | The username of the user                       |
+| token     | The authentication token belonging to the user |
+| index     | The index of the project                       |
+
+# Particle IO Endpoints
 
 ## Get All Devices
 
